@@ -49,4 +49,9 @@ screen is not too warped. It is highly configurable and it is also easy to
 implement the new feature exraction algorithms. Honestly, I didn't dedicate much
 time for parameter tweaking, as my time was limited.
 
-**Note:** all the mentioned constants are configurable.
+The solution currently does not work for websites other then mentioned in the
+task, but it is easy to add the new websites, by adding the website hostname to
+*conf/known_hosts* and its screenshot to *host_images*.
+
+**Note:** all the mentioned constants are configurable via *src/constants.py*
+file.

@@ -7,11 +7,9 @@ import descriptors
 
 app = Flask(__name__)
 
-detector = descriptors.get_detector(con.DETECTOR)
-matcher = descriptors.get_matcher(con.MATCHER)
-
-hosts = util.read_non_empty_lines(con.HOSTS_PATH)
-host_descriptors = descriptors.get_host_descriptors(detector, hosts)
+detector = None
+matcher = None
+host_descriptors = None
 
 @app.route('/', methods=["GET", "POST"])
 def index():
@@ -38,3 +36,12 @@ def get_img_host(detector, matcher, img):
         return con.UNKNOWN_HOST
 
     return host
+
+if __name__ == '__main__':
+    detector = descriptors.get_detector(con.DETECTOR)
+    matcher = descriptors.get_matcher(con.MATCHER)
+
+    hosts = util.read_non_empty_lines(con.HOSTS_PATH)
+    host_descriptors = descriptors.get_host_descriptors(detector, hosts)
+
+    app.run(host="0.0.0.0")

@@ -1,7 +1,7 @@
 DETECTOR = "ORB"
 MATCHER = "BF"
-HOSTS_PATH = "conf/known_hosts"
-IMAGES_PATH = "host_images/"
+HOSTS_PATH = "../conf/known_hosts"
+IMAGES_PATH = "../host_images/"
 DETECTOR_FEATURES = 500
 RELEVANT_FEATURES = 10
 DISTANCE_THRESHOLD = 15

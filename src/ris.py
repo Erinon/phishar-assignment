@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, render_template
 
 import constants as con
@@ -44,4 +45,5 @@ if __name__ == '__main__':
     hosts = util.read_non_empty_lines(con.HOSTS_PATH)
     host_descriptors = descriptors.get_host_descriptors(detector, hosts)
 
-    app.run(host="0.0.0.0")
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
